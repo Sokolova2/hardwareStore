@@ -1,0 +1,186 @@
+{
+  "info": {
+      "name": "Order Management API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+      {
+          "name": "Add Product",
+          "request": {
+              "method": "POST",
+              "header": [
+                  {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                  }
+              ],
+              "body": {
+                  "mode": "raw",
+                  "raw": "{\"name\":\"Laptop\",\"price\":15000.0}"
+              },
+              "url": {
+                  "raw": "http://localhost:5000/products",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["products"]
+              }
+          }
+      },
+      {
+          "name": "Get Products",
+          "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                  "raw": "http://localhost:5000/products",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["products"]
+              }
+          }
+      },
+      {
+          "name": "Add Order",
+          "request": {
+              "method": "POST",
+              "header": [
+                  {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                  }
+              ],
+              "body": {
+                  "mode": "raw",
+                  "raw": "{\"product_id\":1}"
+              },
+              "url": {
+                  "raw": "http://localhost:5000/orders",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["orders"]
+              }
+          }
+      },
+      {
+          "name": "Update Order Status",
+          "request": {
+              "method": "PUT",
+              "header": [
+                  {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                  }
+              ],
+              "body": {
+                  "mode": "raw",
+                  "raw": "{\"status\":\"completed\"}"
+              },
+              "url": {
+                  "raw": "http://localhost:5000/orders/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["orders", "1"]
+              }
+          }
+      },
+      {
+          "name": "Generate Invoice",
+          "request": {
+              "method": "POST",
+              "header": [
+                  {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                  }
+              ],
+              "body": {
+                  "mode": "raw",
+                  "raw": "{\"order_id\":1}"
+              },
+              "url": {
+                  "raw": "http://localhost:5000/invoices",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["invoices"]
+              }
+          }
+      },
+      {
+          "name": "Pay Order",
+          "request": {
+              "method": "PUT",
+              "header": [
+                  {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                  }
+              ],
+              "body": {
+                  "mode": "raw",
+                  "raw": "{\"status\":\"paid\"}"
+              },
+              "url": {
+                  "raw": "http://localhost:5000/orders/1/pay",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["orders", "1", "pay"]
+              }
+          }
+      },
+      {
+          "name": "Get Orders",
+          "request": {
+              "method": "GET",
+              "url": {
+                  "raw": "http://localhost:5000/orders",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["orders"]
+              }
+          }
+      },
+      {
+          "name": "Filter Orders",
+          "request": {
+              "method": "GET",
+              "url": {
+                  "raw": "http://localhost:5000/orders/filter?start_date=2023-01-01&end_date=2023-12-31",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["orders", "filter"],
+                  "query": [
+                      {
+                          "key": "start_date",
+                          "value": "2024-06-01T00:00:00.000000"
+                      },
+                      {
+                          "key": "end_date",
+                          "value": "2024-06-30T23:59:59.999999"
+                      }
+                  ]
+              }
+          }
+      },
+      {
+          "name": "Get Product Discount",
+          "request": {
+              "method": "GET",
+              "url": {
+                  "raw": "http://localhost:5000/products/discounted",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "5000",
+                  "path": ["products", "1", "discount"]
+              }
+          }
+      }
+  ]
+}
